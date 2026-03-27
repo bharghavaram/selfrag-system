@@ -1,3 +1,5 @@
+> **📅 Project Period:** Apr 2025 – May 2025 &nbsp;|&nbsp; **Status:** Completed &nbsp;|&nbsp; **Author:** [Bharghava Ram Vemuri](https://github.com/bharghavaram)
+
 # SELF-RAG System
 
 > Implements the SELF-RAG paper (Asai et al., 2023) — LLM that decides when to retrieve, critiques its own outputs, and self-corrects
