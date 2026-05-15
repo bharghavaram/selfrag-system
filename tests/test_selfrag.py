@@ -48,7 +48,13 @@ async def test_api_health():
 @pytest.mark.asyncio
 async def test_api_query_short():
     from fastapi.testclient import TestClient
+    from unittest.mock import MagicMock
     from main import app
-    client = TestClient(app)
-    resp = client.post("/api/v1/selfrag/query", json={"question": "Hi"})
-    assert resp.status_code == 400
+    from app.api.routes.selfrag import get_selfrag_service
+    app.dependency_overrides[get_selfrag_service] = lambda: MagicMock()
+    try:
+        client = TestClient(app)
+        resp = client.post("/api/v1/selfrag/query", json={"question": "Hi"})
+        assert resp.status_code == 400
+    finally:
+        app.dependency_overrides.clear()
