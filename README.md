@@ -16,7 +16,11 @@
 
 ---
 
-## 🎯 Problem Statement
+<div align="center">
+  <img src="https://raw.githubusercontent.com/bharghavaram/selfrag-system/main/docs/images/demo.svg" alt="selfrag-system demo" width="820"/>
+</div>
+
+--- 🎯 Problem Statement
 
 Standard RAG always retrieves — even when the question is simple and doesn't need context (e.g., "What is 2+2?"). Retrieved chunks are often irrelevant or contradictory, yet the LLM incorporates them anyway, degrading answer quality. SELF-RAG (Asai et al., 2023) teaches the LLM to decide *when* to retrieve using a RETRIEVE token, evaluate whether retrieved documents are relevant (IS_REL), check if they factually support the generated response (IS_SUP), and rate the overall utility (IS_USE) — enabling self-correction over up to 3 reflection rounds.
 
